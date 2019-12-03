@@ -1,5 +1,5 @@
 
-#Item Catalog WSGI: Project 3
+## Item Catalog WSGI: Project 3
 
 ## Web application that provides a list of items within a variety of categories
 ## Includes third party authentication via Google OAuth
@@ -42,7 +42,7 @@
 ##UPDATE SYSTEM:
 ```
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get dist-upgrade
 sudo apt-get autoremove
 sudo apt-get install finger
 ```
@@ -91,6 +91,10 @@ sudo nano .ssh/authorized_keys
 sudo nano /etc/ssh/sshd_config
 	(change allow password to no
 	 make sure port is 2200)
+
+sudo nano /etc/ssh/sshd_config
+(Uncomment line)
+PermitRootLogin prohibit-password
 ```
 
 #CONFIGURE CONNECTIVITY
