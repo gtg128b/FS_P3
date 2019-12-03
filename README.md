@@ -39,7 +39,7 @@
 
 ## Program prepwork
 
-##UPDATE SYSTEM:
+## UPDATE SYSTEM:
 ```
 sudo apt-get update
 sudo apt-get dist-upgrade
@@ -47,13 +47,13 @@ sudo apt-get autoremove
 sudo apt-get install finger
 ```
 
-##ADD USERS
+## ADD USERS
 ```
 sudo adduser student
 sudo adduser grader
 ```
 
-##ADD SUDO
+## ADD SUDO
 ```
 cd /home/ubuntu
 sudo echo "student ALL=(ALL) NOPASSWD:ALL" > student
@@ -86,7 +86,7 @@ sudo nano .ssh/authorized_keys
 (add key)
 ```
 
-#DISALLOW REMOTE
+## DISALLOW REMOTE
 ```
 sudo nano /etc/ssh/sshd_config
 	(change allow password to no
@@ -97,7 +97,7 @@ sudo nano /etc/ssh/sshd_config
 PermitRootLogin prohibit-password
 ```
 
-#CONFIGURE CONNECTIVITY
+## CONFIGURE CONNECTIVITY
 ```
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
@@ -116,7 +116,7 @@ sudo service ssh restart
 sudo timedatectl set-timezone America/New_York
 ```
 
-#INSTALL REQUIREMENTS
+## INSTALL REQUIREMENTS
 ```
 sudo apt-get -qqy install python3 python3-pip
 sudo pip3 install flask packaging oauth2client passlib flask-httpauth
@@ -126,7 +126,7 @@ sudo apt-get install libapache2-mod-wsgi-py3
 sudo apt-get install apache2
 ```
 
-#Item Catalog updates:
+## Item Catalog updates:
   1. Update client_secrets.json with new Domain and Redirect URI
   2. Add path for py files:
     ```
@@ -156,7 +156,7 @@ sudo chown -R www-data:www-data /var/www/catalog
 sudo chmod -R 700 /var/www/catalog
 ```
 
-#APACHE CONFIGURATION
+## APACHE CONFIGURATION
 ```
 sudoedit /etc/apache2/sites-available/catalog.conf
 
@@ -174,17 +174,17 @@ sudoedit /etc/apache2/sites-available/catalog.conf
 	</VirtualHost>
 ```
 
-# Disable Default conf
+## Disable Default conf
 ```
 sudo a2dissite 000-default.conf
 ```
 
-# Enable catalog.conf
+## Enable catalog.conf
 ```
 sudo a2ensite catalog.conf
 ```
 
-#WSGI file catalog.wsgi
+## WSGI file catalog.wsgi
 ```
 nano /var/www/catalog/catalog.wsgi
 
@@ -202,7 +202,7 @@ nano /var/www/catalog/catalog.wsgi
 sudo service apache2 restart
 ```
 
-#UPDATE GOOGLE AUTH Domain and Redirect URI
+## UPDATE GOOGLE AUTH Domain and Redirect URI
 Add domain:
  	http://18.222.73.127.xip.io
 Add redirect URI:
